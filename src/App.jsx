@@ -52,10 +52,16 @@ export default function DempseyCreative() {
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: #f9f8f5; color: #1a1a18; font-family: 'DM Sans', sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; }
-        .page { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+        .page {
+          max-width: 680px;
+          margin: 0 auto;
+          padding-left: 48px;
+          padding-right: 48px;
+        }
 
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(249,248,245,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(26,26,24,0.08); }
-        .nav-inner { max-width: 680px; margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-inner { max-width: 680px; margin: 0 auto; padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
         .logo { font-family: 'DM Serif Display', serif; font-size: 17px; color: #1a1a18; text-decoration: none; letter-spacing: -0.01em; }
         .logo span { color: #2b5ce6; }
         .nav-links { display: flex; gap: 28px; list-style: none; }
@@ -65,12 +71,12 @@ export default function DempseyCreative() {
 
         .mobile-menu { position: fixed; inset: 0; z-index: 99; background: #f9f8f5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
         .mobile-menu a { font-family: 'DM Serif Display', serif; font-size: 36px; color: #1a1a18; text-decoration: none; }
-        .mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; cursor: pointer; color: #1a1a18; line-height: 0; }
+        .mobile-close { position: absolute; top: 20px; right: 28px; background: none; border: none; cursor: pointer; color: #1a1a18; line-height: 0; }
 
-        .hero { padding: 140px 0 80px; }
+        .hero { padding-top: 160px; padding-bottom: 80px; }
         .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #2b5ce6; margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
         .eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: #2b5ce6; }
-        h1.headline { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 7vw, 52px); line-height: 1.1; letter-spacing: -0.02em; color: #1a1a18; margin-bottom: 24px; }
+        h1.headline { font-family: 'DM Serif Display', serif; font-size: clamp(34px, 7vw, 52px); line-height: 1.1; letter-spacing: -0.02em; color: #1a1a18; margin-bottom: 24px; }
         h1.headline em { font-style: italic; color: #2b5ce6; }
         .subline { font-size: 16px; line-height: 1.75; color: #666; max-width: 480px; margin-bottom: 36px; }
         .cta-link { display: inline-flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 500; color: #1a1a18; text-decoration: none; border-bottom: 1.5px solid #1a1a18; padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
@@ -96,7 +102,6 @@ export default function DempseyCreative() {
 
         .contact-block { background: #1a1a18; border-radius: 16px; padding: 52px 40px; text-align: center; }
         .contact-hed { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 5vw, 38px); color: #f9f8f5; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px; }
-        .contact-hed em { color: #7fa7ff; font-style: italic; }
         .contact-sub { font-size: 14px; color: rgba(249,248,245,0.45); margin-bottom: 32px; }
         .email-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: #1a1a18; background: #f9f8f5; text-decoration: none; padding: 13px 28px; border-radius: 100px; transition: background 0.2s, transform 0.15s; }
         .email-btn:hover { background: #fff; transform: translateY(-1px); }
@@ -109,7 +114,19 @@ export default function DempseyCreative() {
         @media (max-width: 600px) {
           .nav-links { display: none; }
           .menu-btn { display: block; }
-          .contact-block { padding: 36px 22px; }
+          .page {
+            padding-left: 28px !important;
+            padding-right: 28px !important;
+          }
+          .nav-inner {
+            padding-left: 28px !important;
+            padding-right: 28px !important;
+          }
+          .hero {
+            padding-top: 100px !important;
+            padding-bottom: 60px !important;
+          }
+          .contact-block { padding: 40px 24px; }
         }
         @media (min-width: 601px) {
           .mobile-menu { display: none !important; }
@@ -142,7 +159,6 @@ export default function DempseyCreative() {
       )}
 
       <main>
-        {/* Hero */}
         <section className="hero page">
           <motion.p className="eyebrow" {...fadeUp(0)}>Home Service Digital Agency</motion.p>
           <motion.h1 className="headline" {...fadeUp(0.08)}>
@@ -160,7 +176,6 @@ export default function DempseyCreative() {
           </motion.div>
         </section>
 
-        {/* Services */}
         <section id="services" className="page" style={{ paddingBottom: "64px" }}>
           <div className="divider" style={{ margin: "0 0 64px" }} />
           <InView><p className="section-label">What I do</p></InView>
@@ -181,7 +196,6 @@ export default function DempseyCreative() {
           </div>
         </section>
 
-        {/* About */}
         <section id="about" className="page" style={{ paddingBottom: "64px" }}>
           <div className="divider" style={{ margin: "0 0 64px" }} />
           <InView><p className="section-label">About</p></InView>
@@ -204,7 +218,6 @@ export default function DempseyCreative() {
           </InView>
         </section>
 
-        {/* Contact */}
         <section id="contact" className="page" style={{ paddingBottom: "80px" }}>
           <div className="divider" style={{ margin: "0 0 64px" }} />
           <InView>
